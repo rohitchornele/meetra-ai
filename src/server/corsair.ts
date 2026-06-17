@@ -1,15 +1,13 @@
 import { createCorsair } from "corsair";
-import { Pool } from "pg";
-import { github } from "@corsair-dev/github";
+import { gmail } from "@corsair-dev/gmail";
+import { googlecalendar } from "@corsair-dev/googlecalendar";
 import "dotenv/config";
+import { pool } from "./db";
 
-export const pool = new Pool({
-  connectionString: process.env.DATABASE_URL,
-});
 
 export const corsair = createCorsair({
-  plugins: [github()],
+  plugins: [gmail({authType: "oauth_2"}), googlecalendar({authType: "oauth_2"})],
   database: pool,
   kek: process.env.CORSAIR_KEK!,
-  multiTenancy: false,
+  multiTenancy: true,
 });

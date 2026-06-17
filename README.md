@@ -34,3 +34,47 @@ You can check out [the Next.js GitHub repository](https://github.com/vercel/next
 The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
 
 Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+
+
+
+I would build in this exact order:
+
+Phase 1
+DashboardLayout
+DashboardNavbar
+Sidebar (collapsible)
+MobileDrawer
+ContextPanel
+
+Phase 2
+Dashboard Home
+KPI Cards
+Suggested Actions
+
+Phase 3
+ChatWindow
+ChatMessage
+ChatInput
+ToolExecution
+
+Phase 4
+Inbox
+
+Phase 5
+Calendar
+
+Phase 6
+Contacts
+Tasks
+AI Memory
+
+Phase 7
+Global Search (Ctrl + K)
+Notifications
+
+AI Streaming
+Tool Integrations
+
+
+
+

@@ -1,26 +1,136 @@
 @import "tailwindcss";
 
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+	--bg: #09090b;
+
+	--sidebar: #111111;
+
+	--card: #18181b;
+
+	--border: rgba(255, 255, 255, 0.08);
+
+	--accent: #7c5cff;
+
+	--accent-secondary: #4f8cff;
+
+	--text-primary: #fafafa;
+
+	--text-secondary: #a1a1aa;
+
+	--navbar-height: 64px;
+
+	--sidebar-expanded: 260px;
+
+	--sidebar-collapsed: 72px;
+
+	--context-panel-width: 340px;
 }
 
 @theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
+	--color-background: var(--background);
+	--color-foreground: var(--foreground);
+	--font-sans: var(--font-geist-sans);
+	--font-mono: var(--font-geist-mono);
 }
 
 @media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+	:root {
+		--background: #0a0a0a;
+		--foreground: #ededed;
+	}
 }
 
 body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+	background: var(--color-bg);
+	color: var(--color-text);
+	font-family: Arial, Helvetica, sans-serif;
+}
+
+@theme {
+	--color-bg: #f5f3ef;
+	--color-card: #ffffff;
+
+	--color-text: #111111;
+	--color-text2: #626262;
+
+	--color-accent: #233b47;
+	--color-accent2: #7a8b6b;
+
+	--color-border: #e7e4df;
+
+	/* New */
+	--color-glow1: rgba(35, 59, 71, 0.08);
+	--color-glow2: rgba(122, 139, 107, 0.06);
+
+	--color-nav-blur: rgba(245, 243, 239, 0.85);
+
+	--shadow-card: 0 2px 20px rgba(0, 0, 0, 0.06);
+
+	--shadow-float: 0 8px 40px rgba(0, 0, 0, 0.1);
+
+	--radius-card: 16px;
+}
+
+.dark {
+	--color-bg: #0e1116;
+
+	--color-card: #171b22;
+
+	--color-text: #ffffff;
+
+	--color-text2: #9aa4b2;
+
+	--color-accent: #4a90e2;
+
+	--color-accent2: #7faf7a;
+
+	--color-border: #252a33;
+
+	/* New */
+
+	--color-glow1: rgba(74, 144, 226, 0.1);
+
+	--color-glow2: rgba(127, 175, 122, 0.07);
+
+	--color-nav-blur: rgba(14, 17, 22, 0.85);
+
+	--shadow-card: 0 2px 20px rgba(0, 0, 0, 0.25);
+
+	--shadow-float: 0 8px 40px rgba(0, 0, 0, 0.4);
+}
+
+@keyframes floatUp {
+	0%,
+	100% {
+		translate: 0 0;
+	}
+
+	50% {
+		translate: 0 -10px;
+	}
+}
+
+/* Chrome, Edge, Safari */
+::-webkit-scrollbar {
+	width: 4px;
+	height: 4px;
+}
+
+::-webkit-scrollbar-track {
+	background: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+	background: rgba(255, 255, 255, 0.12);
+	border-radius: 9999px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+	background: rgba(255, 255, 255, 0.2);
+}
+
+/* Firefox */
+* {
+	scrollbar-width: thin;
+	scrollbar-color: rgba(255, 255, 255, 0.12) transparent;
 }
