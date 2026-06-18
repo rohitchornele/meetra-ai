@@ -2,25 +2,23 @@
 
 import { CalendarDays } from 'lucide-react';
 
-const meetings = [
-  {
-    time: '2:00 PM',
+interface TodayAgendaProps {
+  agenda: {
+    id: string;
 
-    title: 'Product Review',
+    title: string;
 
-    duration: '30 min',
-  },
+    start: string;
 
-  {
-    time: '4:00 PM',
+    end: string;
 
-    title: 'Team Meeting',
+    time: string;
 
-    duration: '1 hour',
-  },
-];
+    date: string;
+  }[];
+}
 
-export default function TodayAgenda() {
+export default function TodayAgenda({ agenda }: TodayAgendaProps) {
   return (
     <div className="bg-[var(--card)] border border-[var(--border)] rounded-xl p-4">
       <div className="flex items-center gap-2 mb-4">
@@ -31,36 +29,53 @@ export default function TodayAgenda() {
         </h3>
       </div>
 
-      <div className="space-y-3">
-        {meetings.map((meeting) => (
-          <div
-            key={meeting.title}
-            className="flex gap-3 rounded-lg px-3 py-2 hover:bg-white/[0.03] transition-colors"
-          >
-            <div className="flex flex-col items-center">
-              <div className="w-2 h-2 rounded-full bg-[var(--accent)] mt-1" />
+      {agenda.length === 0 ? (
+        <div className="text-sm text-[var(--text-secondary)]">
+          No meetings today
+        </div>
+      ) : (
+        <div className="space-y-3">
+          {agenda.map((event) => {
+            const duration =
+              event.start && event.end
+                ? `${Math.round(
+                    (new Date(event.end).getTime() -
+                      new Date(event.start).getTime()) /
+                      (1000 * 60)
+                  )} min`
+                : '';
 
-              <div className="w-px flex-1 bg-[var(--border)] mt-1" />
-            </div>
+            return (
+              <div
+                key={event.id}
+                className="flex gap-3 rounded-lg px-3 py-2 hover:bg-white/[0.03] transition-colors"
+              >
+                <div className="flex flex-col items-center">
+                  <div className="w-2 h-2 rounded-full bg-[var(--accent)] mt-1" />
 
-            <div className="flex-1">
-              <div className="flex items-center justify-between">
-                <span className="text-xs text-[var(--text-secondary)]">
-                  {meeting.time}
-                </span>
+                  <div className="w-px flex-1 bg-[var(--border)] mt-1" />
+                </div>
 
-                <span className="text-xs text-[var(--text-secondary)]">
-                  {meeting.duration}
-                </span>
+                <div className="flex-1">
+                  <div className="flex items-center justify-between">
+                    <span className="text-xs text-[var(--text-secondary)]">
+                      {event.time}
+                    </span>
+
+                    <span className="text-xs text-[var(--text-secondary)]">
+                      {duration}
+                    </span>
+                  </div>
+
+                  <p className="mt-1 text-sm font-medium text-[var(--text-primary)]">
+                    {event.title}
+                  </p>
+                </div>
               </div>
-
-              <p className="mt-1 text-sm font-medium text-[var(--text-primary)]">
-                {meeting.title}
-              </p>
-            </div>
-          </div>
-        ))}
-      </div>
+            );
+          })}
+        </div>
+      )}
     </div>
   );
 }

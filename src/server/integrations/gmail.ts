@@ -19,7 +19,6 @@ export async function sendMessage(tenantId: string, raw: string) {
 }
 
 
-
 export function mapEmail(email: any) {
   const headers = email.payload?.headers ?? [];
 

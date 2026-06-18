@@ -5,36 +5,8 @@
     {
       "idx": 0,
       "version": "7",
-      "when": 1781464253049,
-      "tag": "0000_glamorous_hobgoblin",
-      "breakpoints": true
-    },
-    {
-      "idx": 1,
-      "version": "7",
-      "when": 1781466855442,
-      "tag": "0001_breezy_meteorite",
-      "breakpoints": true
-    },
-    {
-      "idx": 2,
-      "version": "7",
-      "when": 1781634562316,
-      "tag": "0002_tranquil_ink",
-      "breakpoints": true
-    },
-    {
-      "idx": 3,
-      "version": "7",
-      "when": 1781686894864,
-      "tag": "0003_faulty_mindworm",
-      "breakpoints": true
-    },
-    {
-      "idx": 4,
-      "version": "7",
-      "when": 1781688992381,
-      "tag": "0004_bumpy_doctor_spectrum",
+      "when": 1781793141888,
+      "tag": "0000_groovy_paper_doll",
       "breakpoints": true
     }
   ]

@@ -86,8 +86,56 @@ export const conversationsTable = pgTable('conversations', {
 
 export const messagesTable = pgTable('messages', {
   id: uuid('id').primaryKey().defaultRandom(),
-  conversationId: uuid('conversation_id') .references(() => conversationsTable.id, { onDelete: 'cascade' }).notNull(),
-  role: text('role', { enum: ['user', 'assistant', 'tool'], }).notNull(),
+  conversationId: uuid('conversation_id')
+    .references(() => conversationsTable.id, { onDelete: 'cascade' })
+    .notNull(),
+  role: text('role', { enum: ['user', 'assistant', 'tool'] }).notNull(),
   content: text('content').notNull(),
   createdAt: timestamp('created_at').defaultNow().notNull(),
 });
+
+export const emailSummaries = pgTable('email_summaries', {
+  id: uuid('id').defaultRandom().primaryKey(),
+
+  tenantId: text('tenant_id').notNull(),
+
+  messageId: text('message_id').notNull(),
+
+  summary: text('summary').notNull(),
+
+  actionItems: jsonb('action_items').$type<string[]>().notNull(),
+
+  priority: text('priority').notNull(),
+
+  suggestedReplies: jsonb('suggested_replies')
+    .$type<string[]>()
+    .notNull()
+    .default([]),
+
+  createdAt: timestamp('created_at').defaultNow().notNull(),
+
+  updatedAt: timestamp('updated_at').defaultNow().notNull(),
+});
+
+export const emailReplies = pgTable(
+  'email_replies',
+  {
+    id: uuid('id').defaultRandom().primaryKey(),
+
+    tenantId: text('tenant_id').notNull(),
+
+    messageId: text('message_id').notNull(),
+
+    reply: text('reply').notNull(),
+
+    createdAt: timestamp('created_at').defaultNow().notNull(),
+
+    updatedAt: timestamp('updated_at').defaultNow().notNull(),
+  },
+
+  (table) => ({
+    uniqueReply: {
+      columns: [table.tenantId, table.messageId],
+    },
+  })
+);

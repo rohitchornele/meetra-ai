@@ -4,7 +4,8 @@ export async function getEvents(tenantId: string) {
 	
 	const tenant = corsair.withTenant(tenantId);
 	const response = await tenant.googlecalendar.api.events.getMany({
-		maxResults: 10
+		maxResults: 10,
+		timeMin:  new Date().toISOString(),
 	});
 	return (response.items ?? []).map(mapEvent);
 }

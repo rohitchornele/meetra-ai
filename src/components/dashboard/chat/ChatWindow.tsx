@@ -236,7 +236,7 @@ export default function ChatWindow({
   }, [conversationId]);
 
   return (
-    <div className="h-full w-full flex flex-col min-h-0">
+    <div className="w-full flex flex-col min-h-0 p-4 pt-8">
       {/* Empty State */}
       {items.length === 0 && (
         <div className="flex-1 flex flex-col justify-center gap-10 px-6">

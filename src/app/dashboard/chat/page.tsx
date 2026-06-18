@@ -12,8 +12,7 @@ export default async function ChatPage({
     } = await searchParams;
     return (
         <div className="h-full">
-            <ChatWindow
-                initialPrompt={prompt}
+            <ChatWindow initialPrompt={prompt}
             />
         </div>
     );
