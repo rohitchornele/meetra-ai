@@ -1,90 +1,102 @@
-import { Brain, Calendar, CheckSquare, CreditCard, HelpCircle, Inbox, Mail, MessageSquare, NotebookPen, Settings, ShieldAlert, Trash2, Users, } from "lucide-react";
+import {
+  Brain,
+  Calendar,
+  CheckSquare,
+  CreditCard,
+  HelpCircle,
+  Inbox,
+  Mail,
+  MessageSquare,
+  NotebookPen,
+  Settings,
+  ShieldAlert,
+  Trash2,
+  Users,
+} from 'lucide-react';
 
 export const SIDEBAR_SECTIONS = [
-	{
-		title: "AI",
+  {
+    title: 'AI',
 
-		items: [
-			{
-				label: "Chat",
+    items: [
+      {
+        label: 'Chat',
 
-				icon: MessageSquare,
+        icon: MessageSquare,
 
-				href: "/dashboard/chat",
-			},
+        href: '/dashboard/chat',
+      },
+    ],
+  },
 
-			
-		],
-	},
+  {
+    title: 'Communication',
 
-	{
-		title: "Communication",
+    items: [
+      {
+        label: 'Inbox',
 
-		items: [
-			{
-				label: "Inbox",
+        icon: Inbox,
 
-				icon: Inbox,
+        href: '/dashboard/inbox',
+      },
+    ],
+  },
 
-				href: "/dashboard/inbox",
-			},
-		],
-	},
+  {
+    title: 'Calendar',
 
-	{
-		title: "Calendar",
+    items: [
+      {
+        label: 'Calendar',
 
-		items: [
-			{
-				label: "Calendar",
+        icon: Calendar,
 
-				icon: Calendar,
+        href: '/dashboard/calendar',
+      },
+    ],
+  },
 
-				href: "/dashboard/calendar",
-			},
-		],
-	},
+  {
+    title: 'People',
 
-	{
-		title: "People",
+    items: [
+      {
+        label: 'Contacts',
 
-		items: [
-			{
-				label: "Contacts",
+        icon: Users,
 
-				icon: Users,
+        href: '/dashboard/contacts',
+      },
+    ],
+  },
+  {
+    title: 'System',
 
-				href: "/dashboard/contacts",
-			},
-		],
-	},
-	{
-		title: "System",
+    items: [
+      {
+        label: 'Settings',
 
-		items: [
-			{
-				label: "Settings",
+        icon: Settings,
 
-				icon: Settings,
+        href: '/dashboard/settings',
+      },
 
-				href: "/dashboard/settings",
-			},
+      {
+        label: 'Billing',
 
-			{
-				label: "Billing",
+        icon: CreditCard,
 
-				icon: CreditCard,
+        href: '/dashboard/billing',
+      },
 
-				href: "/dashboard/billing",
-			},
+      {
+        label: 'Help',
 
-			{
-				label: "Help",
+        icon: HelpCircle,
 
-				icon: HelpCircle,
-
-				href: "/dashboard/help",
-			},
-		],
-	},
+        href: '/dashboard/help',
+      },
+    ],
+  },
 ];
