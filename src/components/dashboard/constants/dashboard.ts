@@ -13,13 +13,7 @@ export const SIDEBAR_SECTIONS = [
 				href: "/dashboard/chat",
 			},
 
-			{
-				label: "AI Memory",
-
-				icon: Brain,
-
-				href: "/dashboard/memory",
-			},
+			
 		],
 	},
 
@@ -33,38 +27,6 @@ export const SIDEBAR_SECTIONS = [
 				icon: Inbox,
 
 				href: "/dashboard/inbox",
-			},
-
-			{
-				label: "Sent",
-
-				icon: Mail,
-
-				href: "/dashboard/sent",
-			},
-
-			{
-				label: "Drafts",
-
-				icon: NotebookPen,
-
-				href: "/dashboard/drafts",
-			},
-
-			{
-				label: "Spam",
-
-				icon: ShieldAlert,
-
-				href: "/dashboard/spam",
-			},
-
-			{
-				label: "Trash",
-
-				icon: Trash2,
-
-				href: "/dashboard/trash",
 			},
 		],
 	},
@@ -96,21 +58,6 @@ export const SIDEBAR_SECTIONS = [
 			},
 		],
 	},
-
-	{
-		title: "Productivity",
-
-		items: [
-			{
-				label: "Tasks",
-
-				icon: CheckSquare,
-
-				href: "/dashboard/tasks",
-			},
-		],
-	},
-
 	{
 		title: "System",
 
