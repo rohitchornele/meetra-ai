@@ -20,40 +20,10 @@ const features = [
 		],
 	},
 	{
-		icon: "💬",
-		number: "03",
-		title: "Unified Chat",
-		items: [
-			"One chat for email & calendar",
-			"Context-aware replies",
-			"Multi-turn conversations",
-		],
-	},
-	{
 		icon: "⚡",
 		number: "04",
 		title: "Real-time Sync",
 		items: ["Gmail sync", "Calendar sync", "Background updates"],
-	},
-	{
-		icon: "🧠",
-		number: "05",
-		title: "AI Memory",
-		items: [
-			"Remembers contacts",
-			"Remembers preferences",
-			"Understands context",
-		],
-	},
-	{
-		icon: "🔀",
-		number: "06",
-		title: "Multi-account Support",
-		items: [
-			"Switch accounts seamlessly",
-			"Unified inbox view",
-			"Per-account settings",
-		],
 	},
 ];
 export default function Features() {
