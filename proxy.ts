@@ -1,1 +1,1 @@
-export {auth as proxy} from "./src/server/auth"
+export {auth as proxy} from "@/server/auth"

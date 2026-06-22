@@ -1,19 +1,24 @@
-import { auth } from "@/server/auth";
+import { auth } from '@/server/auth';
 
-import DashboardLayout from "@/components/dashboard/layout/DashboardLayout";
+import DashboardLayout from '@/components/dashboard/layout/DashboardLayout';
 
-import { DashboardProvider } from "@/components/dashboard/context/DashboardProvider";
+import { DashboardProvider } from '@/components/dashboard/context/DashboardProvider';
+import { redirect } from 'next/navigation';
 
 export default async function Layout({
-	children,
+  children,
 }: {
-	children: React.ReactNode;
+  children: React.ReactNode;
 }) {
-	const session = await auth();
+  const session = await auth();
 
-	return (
-		<DashboardProvider>
-			<DashboardLayout user={session?.user}>{children}</DashboardLayout>
-		</DashboardProvider>
-	);
+  if (!session) {
+    redirect('/login');
+  }
+
+  return (
+    <DashboardProvider>
+      <DashboardLayout user={session?.user}>{children}</DashboardLayout>
+    </DashboardProvider>
+  );
 }
